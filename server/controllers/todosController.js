@@ -34,19 +34,15 @@ exports.update = function (req, res) {
   Todos.findById(req.params.id, (err, todo) => {
     if (err) res.send(err);
     let new_text = req.body.text;
-    if (todo.text !== new_text) {
-      todo.text = req.body.text;
-      todo
-        .save()
-        .then((result) => {
-          res.json(result);
-        })
-        .catch((err) => {
-          res.send(err);
-        });
-    } else {
-      res.status(400).json("Content identical!");
-    }
+    Object.assign(todo, req.body);
+    todo
+      .save()
+      .then((result) => {
+        res.json(result);
+      })
+      .catch((err) => {
+        res.send(err);
+      });
   });
 };
 

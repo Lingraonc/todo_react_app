@@ -5,10 +5,12 @@ const bodyParser = require("body-parser");
 const mongoose_connect = require("./mongoose_connect.js");
 
 const routes = require("./routes");
+const cors = require("./cors");
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+cors(app);
 routes(app);
 mongoose_connect();
 

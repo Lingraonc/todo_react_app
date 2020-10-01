@@ -1,0 +1,34 @@
+.todo-list-element.important {
+  color: #007bff;
+}
+
+.todo-list-element.success {
+  color: #28a745;
+}
+
+.list-button.btn.active:not(:disabled) {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.preloader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+
+.inputs-container {
+  width: 100%;
+}
+
+.error-alert {
+  position: fixed;
+  top: 50px;
+  width: 100%;
+  max-width: 1200px;
+  z-index: 100;
+}
+
+.hidden {
+  display: none;
+}
